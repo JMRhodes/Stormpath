@@ -13,5 +13,12 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
+Route::get( '/', 'HomeController@index' );
+Route::get( '/home', 'HomeController@index' );
+
+Route::get( '/profile', [
+    'middleware' => [ 'auth' ],
+    'uses'       => function () {
+        echo "You are allowed to view this page!";
+    }
+] );

@@ -1,0 +1,115 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/4.1.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.0
+4 verbose readDependencies loading dependencies from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/package.json
+5 verbose install where, deps [ '/Users/justinrhodes/Documents/Sites/GitHub/Stormpath',
+5 verbose install   [ 'gulp',
+5 verbose install     'gulp-concat',
+5 verbose install     'gulp-jscs',
+5 verbose install     'gulp-jshint',
+5 verbose install     'gulp-load-plugins',
+5 verbose install     'gulp-rename',
+5 verbose install     'gulp-sass',
+5 verbose install     'gulp-sourcemaps',
+5 verbose install     'gulp-uglify',
+5 verbose install     'jshint',
+5 verbose install     'jshint-stylish',
+5 verbose install     'run-sequence' ] ]
+6 verbose install where, peers [ '/Users/justinrhodes/Documents/Sites/GitHub/Stormpath', [] ]
+7 verbose installManyTop reading for lifecycle /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/package.json
+8 info preinstall @
+9 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp/package.json
+10 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-concat/package.json
+11 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-jscs/package.json
+12 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-jshint/package.json
+13 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-load-plugins/package.json
+14 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-rename/package.json
+15 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-sass/package.json
+16 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-sourcemaps/package.json
+17 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-uglify/package.json
+18 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/jshint/package.json
+19 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/jshint-stylish/package.json
+20 verbose installManyTop reading scoped package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/run-sequence/package.json
+21 info package.json gulp-rename@1.2.2 No license field.
+22 verbose readDependencies loading dependencies from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/package.json
+23 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp/package.json
+24 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-concat/package.json
+25 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-jscs/package.json
+26 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-jshint/package.json
+27 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-load-plugins/package.json
+28 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-rename/package.json
+29 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-sass/package.json
+30 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-sourcemaps/package.json
+31 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/gulp-uglify/package.json
+32 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/jshint/package.json
+33 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/jshint-stylish/package.json
+34 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/run-sequence/package.json
+35 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/.bin/gulp/package.json
+36 verbose targetResolver reading package data from /Users/justinrhodes/Documents/Sites/GitHub/Stormpath/node_modules/.bin/jshint/package.json
+37 verbose already installed skipping gulp-sass@^2.3.1 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+38 verbose already installed skipping gulp-sourcemaps@^1.6.0 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+39 verbose already installed skipping gulp-uglify@^1.5.3 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+40 verbose already installed skipping jshint@^2.9.2 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+41 verbose already installed skipping jshint-stylish@^2.2.0 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+42 verbose already installed skipping run-sequence@^1.1.5 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+43 verbose already installed skipping gulp@^3.9.1 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+44 verbose already installed skipping gulp-concat@^2.6.0 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+45 verbose already installed skipping gulp-jscs@^3.0.2 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+46 verbose already installed skipping gulp-jshint@^2.0.1 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+47 verbose already installed skipping gulp-load-plugins@^1.2.2 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+48 verbose already installed skipping gulp-rename@^1.2.2 /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+49 silly install resolved []
+50 info build /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+51 info linkStuff @
+52 silly linkStuff @ has /Users/justinrhodes/Documents/Sites/GitHub as its parent node_modules
+53 verbose linkBins @
+54 verbose linkMans @
+55 verbose rebuildBundles @
+56 verbose rebuildBundles [ '.bin',
+56 verbose rebuildBundles   'gulp',
+56 verbose rebuildBundles   'gulp-concat',
+56 verbose rebuildBundles   'gulp-jscs',
+56 verbose rebuildBundles   'gulp-jshint',
+56 verbose rebuildBundles   'gulp-load-plugins',
+56 verbose rebuildBundles   'gulp-rename',
+56 verbose rebuildBundles   'gulp-sass',
+56 verbose rebuildBundles   'gulp-sourcemaps',
+56 verbose rebuildBundles   'gulp-uglify',
+56 verbose rebuildBundles   'jshint',
+56 verbose rebuildBundles   'jshint-stylish',
+56 verbose rebuildBundles   'run-sequence' ]
+57 info install @
+58 info postinstall @
+59 verbose unsafe-perm in lifecycle true
+60 info @ Failed to exec postinstall script
+61 verbose stack Error: @ postinstall: `composer install && gulp build`
+61 verbose stack Exit status 1
+61 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+61 verbose stack     at emitTwo (events.js:87:13)
+61 verbose stack     at EventEmitter.emit (events.js:172:7)
+61 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+61 verbose stack     at emitTwo (events.js:87:13)
+61 verbose stack     at ChildProcess.emit (events.js:172:7)
+61 verbose stack     at maybeClose (internal/child_process.js:817:16)
+61 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+62 verbose pkgid @
+63 verbose cwd /Users/justinrhodes/Documents/Sites/GitHub/Stormpath
+64 error Darwin 14.5.0
+65 error argv "/usr/local/Cellar/node/4.1.0/bin/node" "/usr/local/bin/npm" "install"
+66 error node v4.1.0
+67 error npm  v2.14.4
+68 error code ELIFECYCLE
+69 error @ postinstall: `composer install && gulp build`
+69 error Exit status 1
+70 error Failed at the @ postinstall script 'composer install && gulp build'.
+70 error This is most likely a problem with the  package,
+70 error not with npm itself.
+70 error Tell the author that this fails on your system:
+70 error     composer install && gulp build
+70 error You can get their info via:
+70 error     npm owner ls
+70 error There is likely additional logging output above.
+71 verbose exit [ 1, true ]
