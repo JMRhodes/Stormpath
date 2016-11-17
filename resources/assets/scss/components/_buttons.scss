@@ -1,0 +1,15 @@
+/* Button Styles
+----------------------------------------------- */
+
+.btn {
+    color: $white;
+    font-size: 16px;
+    border: none;
+    @include border-radius(25px);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: $primary-green;
+    outline: none;
+    padding: 12px 48px;
+    display: inline-block;
+}

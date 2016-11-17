@@ -1,0 +1,54 @@
+/* Form Styles
+----------------------------------------------- */
+
+.form-auth {
+    background: $white;
+    max-width: 430px;
+    margin: 0 auto;
+    @include border-radius(10px);
+    @include box-shadow(1px 1px 5px #888)
+}
+
+.control-label {
+
+    &--hidden {
+        display: none;
+    }
+}
+
+.form-control {
+    margin: -1px 0 0;
+    background: $gray-lightest;
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    padding: 25px 15px;
+    color: $form-text;
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    @include border-radius(0);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.form-submit {
+    padding: 20px 0;
+
+    &--right {
+        text-align: right;
+    }
+}
+
+.link {
+
+    &--small {
+        line-height: 42px;
+        font-size: 12px;
+        color: $gray-light;
+    }
+}

@@ -3,11 +3,6 @@ var $ = require('gulp-load-plugins')();
 var gulp = require('gulp');
 var sequence = require('run-sequence');
 
-function swallowError() {
-    console.log('UGLIFY ERROR');
-    this.emit('end');
-}
-
 /**
  * File paths to various resources/assets are defined here.
  */
@@ -31,7 +26,7 @@ gulp.task('build:scripts:app', function () {
         .pipe($.rename({
             suffix: '.min'
         }))
-        .pipe($.uglify().on('error', swallowError))
+        .pipe($.uglify())
         .pipe(gulp.dest(PATHS.js));
 });
 
@@ -40,9 +35,9 @@ gulp.task('build:styles', function () {
     return gulp.src('resources/assets/scss/main.scss')
         .pipe($.sourcemaps.init())
         .pipe($.sass({
-                includePaths: PATHS.sass,
-                outputStyle: 'compressed'
-            })
+            includePaths: PATHS.sass,
+            outputStyle: 'compressed'
+        })
             .on('error', $.sass.logError))
         .pipe($.rename({
             basename: "app",
