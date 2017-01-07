@@ -4,69 +4,64 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default panel-login">
-                    <div class="panel-body">
-                        <form class="form-horizontal form-auth" role="form" method="POST" action="{{ url('/login') }}">
-                            <div class="form-header pad-xs-15">
-                                <img class="login-logo" src="/images/stopwatch.svg" />
-                            </div>
+                <form class="form form__auth" role="form" method="POST" action="{{ url('/login') }}">
+                    <div class="form__auth-header">
+                        <img class="form__auth-logo" src="/images/stopwatch.svg"/>
+                        <h1 class="hdg hdg--2 hdg--semi-bold">Esthetic</h1>
+                    </div>
 
-                            {{ csrf_field() }}
+                    <div class="form__title pad-xs--30 pad-sm--45">
+                        <h1 class="hdg hdg--2">Sign in</h1>
+                    </div>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="control-label control-label--hidden">E-Mail Address</label>
+                    {{ csrf_field() }}
 
-                                <input id="email" type="email" class="form-control" name="email"
-                                       placeholder="Email Address"
-                                       value="{{ old('email') }}" required autofocus>
+                    <div class="form-group float{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label for="email" class="float__label">Username</label>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
+                        <input id="email" type="email" class="float__input" name="email"
+                               value="{{ old('email') }}" required autofocus>
+
+                        @if ($errors->has('email'))
+                            <span class="form__help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                        @endif
+                    </div>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="control-label control-label--hidden">Password</label>
+                    <div class="form-group float{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <label for="password" class="float__label">Password</label>
 
-                                <input id="password" type="password" class="form-control" name="password"
-                                       placeholder="Password" required>
+                        <input id="password" type="password" class="float__input" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
+                        @if ($errors->has('password'))
+                            <span class="form__help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-
-                            {{--<div class="form-group">--}}
-                            {{--<div class="col-md-6 col-md-offset-4">--}}
-                            {{--<div class="checkbox">--}}
-                            {{--<label>--}}
-                            {{--<input type="checkbox" name="remember"> Remember Me--}}
-                            {{--</label>--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-
-                            <div class="form-group pad-xs-30">
-                                <div class="col-sm-6">
-                                    <a class="link link--small" href="{{ url('/password/reset') }}">
-                                        Forgot Your Password?
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 form-submit--right">
-                                    <button type="submit" class="btn btn-primary">
-                                        Login
-                                    </button>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-                        </form>
+                        @endif
                     </div>
-                </div>
+
+                    <div class="form-group pad-xs--30">
+                        <button type="submit" class="btn btn--full btn--primary">
+                            Login
+                        </button>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 form__link">
+                                <a class="form__link--small" href="{{ url('/register') }}">
+                                    Don't have an account?
+                                </a>
+                            </div>
+                            <div class="col-sm-6 form__link--right">
+                                <a class="form__link--small" href="{{ url('/password/reset') }}">
+                                    Forgot Your Password?
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

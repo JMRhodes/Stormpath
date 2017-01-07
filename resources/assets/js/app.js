@@ -6,6 +6,6 @@
 
 (function () {
 
-    fluidVids._init();
+    formLabels.init();
 
 })();

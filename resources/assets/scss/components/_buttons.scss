@@ -2,14 +2,22 @@
 ----------------------------------------------- */
 
 .btn {
-    color: $white;
-    font-size: 16px;
-    border: none;
-    @include border-radius(25px);
-    -moz-appearance: none;
     -webkit-appearance: none;
-    background: $primary-green;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background: $primary-blue;
+    font-size: 16px;
+    color: $white;
+    display: block;
+    width: 100%;
+    padding: 15px;
     outline: none;
-    padding: 12px 48px;
-    display: inline-block;
+    cursor: pointer;
+    @include transition(all 0.25s linear);
+    @include border-radius(30px);
+
+    &:hover {
+        background: $secondary-blue;
+    }
 }

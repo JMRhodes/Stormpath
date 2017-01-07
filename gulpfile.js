@@ -59,7 +59,7 @@ gulp.task('lint', function () {
 // Watch tasks
 gulp.task('watch', function () {
     // Watch .js files
-    gulp.watch(PATHS.jsApp, ['build:scripts:app', 'lint']);
+    gulp.watch(PATHS.jsApp, ['build:scripts:app']);
     // Watch .scss files
     gulp.watch(PATHS.sass, ['build:styles']);
 });

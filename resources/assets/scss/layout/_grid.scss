@@ -99,7 +99,7 @@
 // pad-xs classes
 @for $i from 0 through 60 {
 	$class-num: $i * 5;
-	.pad-xs-#{$class-num} {
+	.pad-xs--#{$class-num} {
 		padding-top: $class-num + px;
 		padding-bottom: $class-num + px;
 	}
@@ -244,7 +244,7 @@
 	// pad-sm classes
 	@for $i from 0 through 60 {
 		$class-num: $i * 5;
-		.pad-sm-#{$class-num} {
+		.pad-sm--#{$class-num} {
 			padding-top: $class-num + px;
 			padding-bottom: $class-num + px;
 		}
@@ -398,7 +398,7 @@
 	// pad-md classes
 	@for $i from 0 through 60 {
 		$class-num: $i * 5;
-		.pad-md-#{$class-num} {
+		.pad-md--#{$class-num} {
 			padding-top: $class-num + px;
 			padding-bottom: $class-num + px;
 		}
@@ -553,7 +553,7 @@
 	// pad-lg classes
 	@for $i from 0 through 60 {
 		$class-num: $i * 5;
-		.pad-lg-#{$class-num} {
+		.pad-lg--#{$class-num} {
 			padding-top: $class-num + px;
 			padding-bottom: $class-num + px;
 		}

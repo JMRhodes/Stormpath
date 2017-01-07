@@ -2,8 +2,10 @@
 ----------------------------------------------- */
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     word-wrap: break-word;
+    background: $gray-lightest;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;

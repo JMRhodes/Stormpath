@@ -1,2 +1,17 @@
 /* Font Styles
 ----------------------------------------------- */
+
+.hdg {
+
+    &--2 {
+        font-size: 18px;
+    }
+
+    &--semi-bold {
+        font-weight: 600;
+    }
+
+    &--bold {
+        font-weight: 700;
+    }
+}
