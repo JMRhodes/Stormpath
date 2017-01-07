@@ -1,43 +1,40 @@
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Hale') }}
+<nav class="primary">
+    <ul class="nav">
+        <li class="nav-item dropdown">
+            <a href="#" class="user dropdown__toggle" data-toggle="dropdown" role="button"
+               aria-expanded="false">
+                <div class="user__avatar user__avatar--status-green">
+                    <img class="user__avatar-image" src="/images/user.svg"/>
+                </div>
+                <span class="user__caret">
+                    <svg class="icon icon-arrow_down"><use xlink:href="#icon-arrow_down"></use></svg>
+                </span>
             </a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+            <div class="dropdown__menu">
+                <ul class="user-tray" role="menu">
+                    <li>
+                        <span class="user-tray__username">{{ Auth::user()->name }}</span>
+                    </li>
+                    <li>
+                        <a class="user-tray__logout" href="{{ url('/logout') }}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                            Logout
                         </a>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+                              style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     </li>
-                @endif
-            </ul>
-        </div>
-    </div>
+                    <li>
+                        <a class="user-tray__settings">
+                            <svg class="icon icon-cog"><use xlink:href="#icon-cog"></use></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
 </nav>

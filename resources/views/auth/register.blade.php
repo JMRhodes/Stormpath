@@ -6,8 +6,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <form class="form form__auth" role="form" method="POST" action="{{ url('/register') }}">
                     <div class="form__auth-header">
-                        <img class="form__auth-logo" src="/images/stopwatch.svg"/>
-                        <h1 class="hdg hdg--2 hdg--semi-bold">Esthetic</h1>
+                        <img class="form__auth-logo" src="{{ config('app.logo_url') }}"/>
+                        <h1 class="hdg hdg--2 hdg--semi-bold">{{ config('app.name') }}</h1>
                     </div>
 
                     <div class="form__title pad-xs--30 pad-sm--45">

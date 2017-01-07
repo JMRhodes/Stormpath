@@ -22,9 +22,11 @@
     </script>
 </head>
 <body class="template-{{ collect(\Request::segments())->implode('-') }}">
+<?php include('images/icons/icons.svg'); ?>
+
 <div id="app">
     @if (Auth::user())
-        @include('layouts.navigation')
+        @include('layouts.header')
     @endif
 
     @yield('content')

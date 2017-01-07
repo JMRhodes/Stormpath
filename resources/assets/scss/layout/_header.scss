@@ -1,0 +1,27 @@
+/* Header Styles
+----------------------------------------------- */
+
+.header {
+    background: $primary-blue;
+    text-align: left;
+
+    &__brand {
+        padding: 15px 0;
+        display: inline-block;
+        color: $white;
+
+        .hdg {
+            display: inline-block;
+            line-height: 42px;
+        }
+    }
+
+    &__logo {
+        height: 42px;
+        width: 42px;
+        float: left;
+        vertical-align: baseline;
+        margin: 0 12px 0 0;
+        display: -block;
+    }
+}
