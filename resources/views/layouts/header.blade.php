@@ -1,44 +1,11 @@
-<nav class="navbar navbar-default navbar-static-top">
+<div class="header">
     <div class="container">
-        <div class="navbar-header">
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="navbar-logo" src="{{ config('app.logo_url') }}"/>
-                {{ config('app.name') }}
-            </a>
-        </div>
+        <!-- Branding Image -->
+        <a class="header__brand" href="{{ url('/') }}">
+            <img class="header__logo" src="{{ config('app.logo_url') }}"/>
+            <h1 class="hdg hdg--1 hdg--brand">{{ config('app.name') }}</h1>
+        </a>
 
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
-            </ul>
-        </div>
+        @include('layouts.navigation')
     </div>
-</nav>
+</div>

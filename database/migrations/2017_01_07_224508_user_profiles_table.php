@@ -14,12 +14,13 @@ class UserProfilesTable extends Migration
     public function up()
     {
         Schema::create('user_profiles', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('user_id');
             $table->string('name');
             $table->string('age');
             $table->string('weight');
             $table->string('height');
             $table->string('avatar');
+            $table->timestamps();
         });
     }
 
