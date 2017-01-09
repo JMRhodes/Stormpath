@@ -11,6 +11,7 @@ textarea {
     outline: 0;
     display: block;
     width:100%;
+    resize: vertical;
     
     &:-webkit-autofill {
         background: $white !important;
@@ -24,6 +25,10 @@ textarea {
     &-group {
         display: block;
         width:100%;
+    }
+
+    &--text-right {
+        text-align: right;
     }
 
     &__link--small {
@@ -70,6 +75,10 @@ textarea {
 
     &-header {
         text-align: center;
+
+        a {
+            color: $primary-blue;
+        }
     }
 
     &-logo {

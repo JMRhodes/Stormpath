@@ -9,15 +9,27 @@
     background: $primary-blue;
     font-size: 16px;
     color: $white;
-    display: block;
-    width: 100%;
-    padding: 15px;
+    padding: 15px 30px;
+    display: inline-block;
     outline: none;
     cursor: pointer;
     @include transition(all 0.25s linear);
     @include border-radius(30px);
 
+    &--full {
+        display: block;
+        width: 100%;
+    }
+
     &:hover {
         background: $secondary-blue;
+    }
+
+    &--secondary {
+        background: $primary-red;
+
+        &:hover {
+            background: darken($primary-red, 5%);
+        }
     }
 }

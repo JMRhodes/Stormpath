@@ -73,9 +73,8 @@ class RegisterController extends Controller {
             'height' => '',
             'avatar' => ''
         ] );
-//        print_r($user);
-//        print_r($profile);
 
+        // save initial user profile data
         $user->profile()->save( $profile );
 
         return $user;

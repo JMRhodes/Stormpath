@@ -5,6 +5,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     word-wrap: break-word;
+    color: $primary-blue;
     background: $gray-lightest;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -20,4 +21,9 @@ body {
 a {
     text-decoration: none;
     @include transition( all 0.1s linear );
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

@@ -18,7 +18,10 @@ Route::get( '/home', 'HomeController@index' );
 
 Route::get( '/profile', [
     'middleware' => [ 'auth' ],
-    'uses'       => function () {
-        echo "You are allowed to view this page!";
-    }
+    'uses'       => 'ProfileController@index'
+] );
+
+Route::post( '/profile', [
+    'middleware' => [ 'auth' ],
+    'uses'       => 'ProfileController@update'
 ] );

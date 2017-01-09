@@ -21,9 +21,9 @@
                 content: "";
                 width: 12px;
                 height: 12px;
-                bottom: -4px;
-                right: -4px;
-                border: 4px solid $primary-blue;
+                bottom: -2px;
+                right: -3px;
+                border: 3px solid $primary-blue;
                 background: $status-green;
                 @include border-radius(100%);
             }
@@ -59,7 +59,7 @@
         visibility: hidden; /* hides sub-menu */
         opacity: 0;
         transform: translateY(-2em);
-        z-index: -1;
+        z-index: 1;
         transition: all 0.2s ease-in-out 0s, visibility 0s linear 0.2s, z-index 0s linear 0.01s;
         -webkit-transition: all 0.2s ease-in-out 0s, visibility 0s linear 0.2s, z-index 0s linear 0.01s;
 
@@ -73,7 +73,7 @@
         .dropdown__menu {
             visibility: visible; /* shows sub-menu */
             opacity: 1;
-            z-index: 1;
+            z-index: 2;
             transform: translateY(0%);
             transition-delay: 0s, 0s, 0.3s;
         }

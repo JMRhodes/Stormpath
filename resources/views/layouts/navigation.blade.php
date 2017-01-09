@@ -29,8 +29,10 @@
                         </form>
                     </li>
                     <li>
-                        <a class="user-tray__settings">
-                            <svg class="icon icon-cog"><use xlink:href="#icon-cog"></use></svg>
+                        <a class="user-tray__settings" href="{{ url('/profile') }}">
+                            <svg class="icon icon-cog">
+                                <use xlink:href="#icon-cog"></use>
+                            </svg>
                         </a>
                     </li>
                 </ul>

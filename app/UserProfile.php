@@ -8,6 +8,8 @@ class UserProfile extends Model {
 
     protected $table = 'user_profiles';
 
+    public $primaryKey = 'user_id';
+
     /**
      * The attributes that are mass assignable.
      *
