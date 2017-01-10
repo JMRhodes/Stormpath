@@ -25,3 +25,8 @@ Route::post( '/profile', [
     'middleware' => [ 'auth' ],
     'uses'       => 'ProfileController@update'
 ] );
+
+Route::post( '/add-activity', [
+    'middleware' => [ 'auth' ],
+    'uses'       => 'ActivitiesController@create'
+] );

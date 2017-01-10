@@ -1,3 +1,43 @@
+<?php
+use App\Http\Controllers\FormFieldsController;
+
+$fields = [
+    [
+        'fields' => [
+            'name'  => [
+                'label' => 'Name',
+                'value' => Auth::user()->name,
+                'container_class' => 'col-xs-12 col-sm-6 float'
+            ],
+            'email' => [
+                'label' => 'E-Mail',
+                'value' => Auth::user()->email,
+                'container_class' => 'col-xs-12 col-sm-6 float'
+            ],
+        ]
+    ],
+    [
+        'fields' => [
+            'age'  => [
+                'label'           => 'Age',
+                'value'           => $profile->age,
+                'container_class' => 'col-xs-12 col-sm-4 float'
+            ],
+            'height' => [
+                'label'           => 'Height',
+                'value'           => $profile->height,
+                'container_class' => 'col-xs-12 col-sm-4 float'
+            ],
+            'weight' => [
+                'label'           => 'Weight',
+                'value'           => $profile->weight,
+                'container_class' => 'col-xs-12 col-sm-4 float'
+            ],
+        ]
+    ],
+];
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -19,78 +59,18 @@
 
                                 {{ csrf_field() }}
 
-                                <div class="form-row clearfix">
-                                    <div class="col-xs-12 col-sm-6 float{{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label for="name" class="float__label">Name</label>
-
-                                        <input id="name" type="text" class="float__input" name="name"
-                                               value="{{ Auth::user()->name }}" required>
-
-                                        @if ($errors->has('name'))
-                                            <span class="form__help-block">
-                                                <strong>{{ $errors->first('name') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-
-                                    <div class="col-xs-12 col-sm-6 float{{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <label for="email" class="float__label">E-Mail Address</label>
-
-                                        <input id="email" type="email" class="float__input" name="email"
-                                               value="{{ Auth::user()->email }}" required disabled>
-
-                                        @if ($errors->has('email'))
-                                            <span class="form__help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <div class="form-row clearfix">
-                                    <div class="col-xs-12 col-sm-4 float">
-                                        <label for="age" class="float__label">Age</label>
-
-                                        <input id="age" type="age" class="float__input" name="age"
-                                               value="{{ $profile->age }}">
-
-                                        @if ($errors->has('age'))
-                                            <span class="form__help-block">
-                                                <strong>{{ $errors->first('age') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4 float">
-                                        <label for="height" class="float__label">Height</label>
-
-                                        <input id="height" type="height" class="float__input" name="height"
-                                               value="{{ $profile->height }}">
-
-                                        @if ($errors->has('height'))
-                                            <span class="form__help-block">
-                                                <strong>{{ $errors->first('height') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4 float">
-                                        <label for="weight" class="float__label">Weight</label>
-
-                                        <input id="weight" type="weight" class="float__input" name="weight"
-                                               value="{{ $profile->weight }}">
-
-                                        @if ($errors->has('weight'))
-                                            <span class="form__help-block">
-                                                <strong>{{ $errors->first('weight') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
+                                <?php
+                                foreach ( $fields as $row) {
+                                    ( new FormFieldsController )->formRow( $row );
+                                }
+                                ?>
 
                                 <div class="form-row clearfix">
                                     <div class="col-xs-12 float">
                                         <label for="bio" class="float__label">Bio</label>
 
-                                        <textarea id="bio" type="bio" class="float__input" name="bio" rows="4"></textarea>
+                                        <textarea id="bio" type="bio" class="float__input" name="bio"
+                                                  rows="4"></textarea>
 
                                         @if ($errors->has('bio'))
                                             <span class="form__help-block">
