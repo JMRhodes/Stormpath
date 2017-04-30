@@ -23,7 +23,7 @@
                 height: 12px;
                 bottom: -2px;
                 right: -3px;
-                border: 3px solid $primary-blue;
+                border: 3px solid $malibu;
                 background: $status-green;
                 @include border-radius(100%);
             }
@@ -48,11 +48,11 @@
     display: block;
     padding: 15px 0;
     position: relative;
-    background: $primary-blue;
+    background: $malibu;
 
     &__menu {
         position: absolute;
-        background: $primary-blue;
+        background: $malibu;
         min-width: 320px;
         right: -15px;
         top: 100%;
@@ -135,7 +135,7 @@
     &__logout {
         display: block;
         color: $white;
-        background: $primary-blue;
+        background: $malibu;
         line-height: 1;
         font-size: 11px;
         font-weight: 700;

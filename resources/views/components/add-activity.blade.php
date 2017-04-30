@@ -4,21 +4,13 @@ use App\Http\Controllers\FormFieldsController;
 $fields = [
     [
         'fields' => [
-            'type'   => [
-                'type'            => 'select',
-                'label'           => 'type',
-                'container_class' => 'col-xs-12 col-sm-4 float',
-                'options'         => [
-                    'run' => 'Run'
-                ]
-            ],
             'miles' => [
                 'label'           => 'Miles',
-                'container_class' => 'col-xs-12 col-sm-4 float'
+                'container_class' => 'col-xs-12 col-sm-6 float'
             ],
             'duration' => [
                 'label'           => 'Duration',
-                'container_class' => 'col-xs-12 col-sm-4 float'
+                'container_class' => 'col-xs-12 col-sm-6 float'
             ],
             'date_completed' => [
                 'label'           => 'Date',

@@ -15,7 +15,7 @@ class ActivitiesController extends Controller {
     }
 
     public function index() {
-        $activities = DB::table( 'activities' )->latest('completed_on')->get();
+        $activities = DB::table( 'activities' )->latest( 'completed_on' )->get();
 
         return $activities;
     }
@@ -26,16 +26,14 @@ class ActivitiesController extends Controller {
      * @return Activity
      */
     protected function create() {
-        if ( ! isset( $_POST['type'] ) ) {
-            return redirect( '/home' );
-        }
-
         $date_completed = $_POST['date_completed_submit'] ?: date( 'Y-m-d' );
         $time_completed = $_POST['time_completed_submit'] ?: date( 'H:i:s', time() );
 
+        //$_POST['type']
+
         $activity = new Activities( [
             'user_id'      => Auth::user()->id,
-            'type'         => $_POST['type'],
+            'type'         => 'run',
             'miles'        => isset( $_POST['miles'] ) ? $_POST['miles'] : 0,
             'duration'     => $_POST['duration'],
             'description'  => '',

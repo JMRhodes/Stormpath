@@ -1,11 +1,13 @@
 <div class="header">
-    <div class="container">
-        <!-- Branding Image -->
-        <a class="header__brand" href="{{ url('/') }}">
-            <img class="header__logo" src="{{ config('app.logo_url') }}"/>
-            <h1 class="hdg hdg--1 hdg--brand">{{ config('app.name') }}</h1>
-        </a>
+    <div class="container-fluid">
+    @include('layouts.navigation')
 
-        @include('layouts.navigation')
+    <!-- Branding Image -->
+        <div class="header__brand">
+            <a href="{{ url('/') }}">
+                <img class="header__logo" src="{{ config('app.logo_url') }}"/>
+            </a>
+            <h1 class="hdg hdg--2 hdg--bold hdg--brand">Dashboard</h1>
+        </div>
     </div>
 </div>

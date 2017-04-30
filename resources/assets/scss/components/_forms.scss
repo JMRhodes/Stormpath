@@ -10,21 +10,39 @@ textarea {
     border: 0;
     outline: 0;
     display: block;
-    width:100%;
+    width: 100%;
     resize: vertical;
-    
+
     &:-webkit-autofill {
-        background: $alabaster !important;
-        -webkit-box-shadow: 0 0 0px 1000px $alabaster inset;
+        background: $aqua-haze !important;
     }
 }
 
 .form {
     background: $white;
+    overflow: hidden;
+
+    &__title {
+        color: $rolling-stone;
+        font-weight: 700;
+        position: relative;
+        padding: 0 0 30px 0;
+        margin-bottom: 30px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -100%;
+            right: -100%;
+            bottom: 0;
+            height: 2px;
+            background: $aqua-haze;
+        }
+    }
 
     &-group {
         display: block;
-        width:100%;
+        width: 100%;
     }
 
     &--text-right {
@@ -32,9 +50,9 @@ textarea {
     }
 
     &__link--small {
-        color: $primary-blue;
-        font-size:12px;
-        text-decoration: underline;
+        color: $shamrock;
+        font-size: 14px;
+        font-weight: 700;
     }
 
     &__link {
@@ -66,18 +84,20 @@ textarea {
 .form__auth {
     padding: 35px 45px;
     max-width: 480px;
-    margin: 30px auto;
-    @include box-shadow(0 0 40px $blue-shadowed);
-
-    @include tablet() {
-        margin: 60px auto;
-    }
+    margin: 30px auto 60px;
+    @include border-radius(5px);
+    @include box-shadow(1px 1px 2px $porcelain);
 
     &-header {
         text-align: center;
+        margin-top: 30px;
+
+        @include tablet() {
+            margin-top: 60px;
+        }
 
         a {
-            color: $primary-blue;
+            color: $rolling-stone;
         }
     }
 
@@ -94,8 +114,8 @@ textarea {
     margin: 15px 0;
 
     &__input {
-        padding: 10px;
-        background: $alabaster;
+        padding: 15px 10px;
+        background: $aqua-haze;
     }
 
     &__label {

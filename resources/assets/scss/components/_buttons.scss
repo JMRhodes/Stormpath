@@ -6,15 +6,16 @@
     -moz-appearance: none;
     appearance: none;
     border: none;
-    background: $primary-blue;
-    font-size: 16px;
+    background: $shamrock;
+    font-size: 18px;
+    font-weight: 700;
     color: $white;
     padding: 15px 30px;
     display: inline-block;
     outline: none;
     cursor: pointer;
     @include transition(all 0.25s linear);
-    @include border-radius(30px);
+    @include border-radius(5px);
 
     &--full {
         display: block;
@@ -22,7 +23,7 @@
     }
 
     &:hover {
-        background: $secondary-blue;
+        background: $mountain-meadow;
     }
 
     &--secondary {

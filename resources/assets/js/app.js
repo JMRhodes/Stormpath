@@ -6,7 +6,7 @@
 
 (function () {
 
-    formLabels._init();
+    masonryPanels._init();
     datePickers._init();
 
 })();

@@ -22,10 +22,11 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name'     => 'Trackd',
+    'name'     => 'MN Run Club',
 
     // Logo Image URL
-    'logo_url' => '/images/logos/' . $logos[ $logo_rand ] . '.svg',
+    // 'logo_url' => '/images/logos/' . $logos[ $logo_rand ] . '.svg',
+    'logo_url' => '/images/logos/runner.svg',
 
     /*
     |--------------------------------------------------------------------------

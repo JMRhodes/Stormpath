@@ -81,7 +81,7 @@ $fields = [
                                 </div>
 
                                 <div class="form-row form--text-right col-sm-12 pad-sm--60 pad--no-bottom">
-                                    <button type="submit" class="btn btn--secondary">
+                                    <button type="submit" class="btn btn--primary">
                                         Save changes
                                     </button>
                                 </div>

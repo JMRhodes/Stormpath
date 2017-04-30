@@ -2,17 +2,30 @@
 ----------------------------------------------- */
 
 .header {
-    background: $primary-blue;
+    background: $malibu;
     text-align: left;
 
     &__brand {
         padding: 15px 0;
         display: inline-block;
         color: $white;
+        position: relative;
 
         .hdg {
             display: inline-block;
             line-height: 42px;
+            padding-left: 45px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                height: 2px;
+                width: 30px;
+                background: $white;
+            }
         }
     }
 
@@ -21,7 +34,7 @@
         width: 42px;
         float: left;
         vertical-align: baseline;
-        margin: 0 12px 0 0;
+        margin: 0 15px 0 0;
         display: -block;
     }
 }

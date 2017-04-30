@@ -1,46 +1,31 @@
 /* Page Panel Styles
 ----------------------------------------------- */
 
+.panels {
+    display: block;
+    width: 100%;
+}
+
 .panel {
     background: $white;
-    border: 1px solid $panel-outline;
     position: relative;
     margin-bottom: 20px;
-
-    &::after,
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        height: 2px;
-        left: 3px;
-        right: 3px;
-        background: $white;
-        border-bottom: 1px solid $panel-outline;
-        border-left: 1px solid $panel-outline;
-        border-right: 1px solid $panel-outline;
-    }
-
-    &::after {
-        bottom: -7px;
-        height: 2px;
-        left: 7px;
-        right: 7px;
-    }
+    @include border-radius(5px);
+    @include box-shadow(1px 1px 2px $porcelain);
 
     &--sm {
         padding: 15px;
 
         @include tablet() {
-            padding: 30px 45px;
+            padding: 30px;
         }
     }
 
     &--lg {
-        padding: 30px 15px;
+        padding: 30px;
 
         @include tablet() {
-            padding: 60px 45px;
+            padding: 45px;
         }
     }
 }
