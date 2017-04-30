@@ -6,6 +6,7 @@
 
 (function () {
 
-    formLabels.init();
+    formLabels._init();
+    datePickers._init();
 
 })();

@@ -16,6 +16,8 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view( 'home' );
+        $activities = ( new ActivitiesController() )->index();
+
+        return view( 'home', [ 'activities' => $activities ] );
     }
 }

@@ -20,6 +20,14 @@ $fields = [
                 'label'           => 'Duration',
                 'container_class' => 'col-xs-12 col-sm-4 float'
             ],
+            'date_completed' => [
+                'label'           => 'Date',
+                'container_class' => 'col-xs-12 col-sm-6 float datepicker'
+            ],
+            'time_completed' => [
+                'label'           => 'Time',
+                'container_class' => 'col-xs-12 col-sm-6 float timepicker'
+            ],
         ]
     ],
 ];

@@ -17,12 +17,12 @@
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode( [
-                'csrfToken' => csrf_token(),
+            'csrfToken' => csrf_token(),
         ] ); ?>
     </script>
 </head>
 <body class="template-{{ collect(\Request::segments())->implode('-') }}">
-<?php include('images/icons/icons.svg'); ?>
+<?php include( 'images/icons/icons.svg' ); ?>
 
 <div id="app">
     @if (Auth::user())
@@ -34,6 +34,7 @@
 
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/vendor.min.js"></script>
 <script src="/js/app.min.js"></script>
 </body>
 </html>

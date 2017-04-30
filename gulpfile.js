@@ -13,6 +13,11 @@ var PATHS = {
         'resources/assets/scss/*.scss',
         'resources/assets/scss/**/*.scss'
     ],
+    jsVendor: [
+        'bower_components/pickadate/lib/picker.js',
+        'bower_components/pickadate/lib/picker.date.js',
+        'bower_components/pickadate/lib/picker.time.js'
+    ],
     jsApp: [
         'resources/assets/js/app/*.js',
         'resources/assets/js/app.js'
@@ -23,6 +28,17 @@ var PATHS = {
 gulp.task('build:scripts:app', function () {
     return gulp.src(PATHS.jsApp)
         .pipe($.concat('app.js'))
+        .pipe($.rename({
+            suffix: '.min'
+        }))
+        .pipe($.uglify())
+        .pipe(gulp.dest(PATHS.js));
+});
+
+// Concatenate & Minify all Vendor javascript files
+gulp.task('build:scripts:vendor', function () {
+    return gulp.src(PATHS.jsVendor)
+        .pipe($.concat('vendor.js'))
         .pipe($.rename({
             suffix: '.min'
         }))
@@ -60,6 +76,8 @@ gulp.task('lint', function () {
 gulp.task('watch', function () {
     // Watch .js files
     gulp.watch(PATHS.jsApp, ['build:scripts:app']);
+    // Watch .js files
+    gulp.watch(PATHS.jsVendor, ['build:scripts:vendor']);
     // Watch .scss files
     gulp.watch(PATHS.sass, ['build:styles']);
 });
@@ -68,6 +86,7 @@ gulp.task('watch', function () {
 gulp.task('build', function (done) {
     sequence([
         'build:scripts:app',
+        'build:scripts:vendor',
         'build:styles'
     ], done);
 });

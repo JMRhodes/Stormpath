@@ -6,7 +6,7 @@ var formLabels = (function ($) {
 
     var pub = {}; // public facing functions
 
-    pub.init = function () {
+    pub._init = function () {
 
         $('.float__input').each(function () {
 

@@ -14,8 +14,8 @@ textarea {
     resize: vertical;
     
     &:-webkit-autofill {
-        background: $white !important;
-        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        background: $alabaster !important;
+        -webkit-box-shadow: 0 0 0px 1000px $alabaster inset;
     }
 }
 
@@ -91,26 +91,19 @@ textarea {
 .float {
     display: inline-block;
     position: relative;
-    margin: 15px 0 30px;
+    margin: 15px 0;
 
     &__input {
-        padding: 10px 0;
-        border-bottom: 1px solid $gray-lighter;
-        @include transition( 0.1s all linear );
+        padding: 10px;
+        background: $alabaster;
     }
 
     &__label {
-        position: absolute;
-        top: 12px;
         cursor: text;
         text-transform: uppercase;
-        color: $gray-light;
-        font-size: 14px;
-        @include transition( 0.1s all linear );
-    }
-
-    &--active &__label {
+        color: $ghost;
         font-size: 12px;
-        top: -10px;
+        display: block;
+        margin-bottom: 8px;
     }
 }

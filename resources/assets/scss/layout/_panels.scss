@@ -5,6 +5,7 @@
     background: $white;
     border: 1px solid $panel-outline;
     position: relative;
+    margin-bottom: 20px;
 
     &::after,
     &::before {
@@ -25,6 +26,14 @@
         height: 2px;
         left: 7px;
         right: 7px;
+    }
+
+    &--sm {
+        padding: 15px;
+
+        @include tablet() {
+            padding: 30px 45px;
+        }
     }
 
     &--lg {
