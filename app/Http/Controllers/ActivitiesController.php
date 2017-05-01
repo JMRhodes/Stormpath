@@ -26,6 +26,7 @@ class ActivitiesController extends Controller {
      * @return Activity
      */
     protected function create() {
+        date_default_timezone_set('America/Chicago');
         $date_completed = $_POST['date_completed_submit'] ?: date( 'Y-m-d' );
         $time_completed = $_POST['time_completed_submit'] ?: date( 'H:i:s', time() );
 

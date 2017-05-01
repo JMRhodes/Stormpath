@@ -2,11 +2,27 @@
 ----------------------------------------------- */
 
 .header {
-    background: $malibu;
     text-align: left;
+    padding: 15px 0 30px;
+
+    @include tablet() {
+        position: fixed;
+        width: 86px;
+    }
+
+    &::before {
+        content: "";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        background: $malibu;
+        width: 9999px;
+        z-index: -1;
+    }
 
     &__brand {
-        padding: 15px 0;
         display: inline-block;
         color: $white;
         position: relative;
@@ -30,11 +46,11 @@
     }
 
     &__logo {
-        height: 42px;
-        width: 42px;
+        height: 56px;
+        width: 56px;
         float: left;
         vertical-align: baseline;
-        margin: 0 15px 0 0;
+        margin: 0 0 15px 0;
         display: -block;
     }
 }

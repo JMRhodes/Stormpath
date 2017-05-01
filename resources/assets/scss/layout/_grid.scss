@@ -8,6 +8,14 @@
 	&-fluid {
 		@include container-fluid();
 	}
+
+	&--content {
+
+		@include tablet() {
+			padding-left: 100px;
+			padding-right: 30px;
+		}
+	}
 }
 
 // mobile first defaults

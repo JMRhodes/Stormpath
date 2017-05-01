@@ -8,14 +8,15 @@ var masonryPanels = (function ($) {
     var panelItems = $('.panels');
 
     pub._init = function () {
-        // pub._masonryInit();
+        pub._masonryInit();
     };
 
     pub._masonryInit = function () {
         panelItems.masonry({
-            columnWidth: '.col-sm-6',
             itemSelector: '.panel--sm',
-            percentPosition: true
+            columnWidth: 320,
+            fitWidth: true,
+            gutter: 30
         });
     };
 

@@ -2,5 +2,36 @@
 ----------------------------------------------- */
 
 nav.primary {
-    float: right;
+    width: 56px;
+}
+
+.nav {
+
+    &__item {
+        display: block;
+        margin: 30px 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .icon {
+        width: 28px;
+        height: 28px;
+        fill: $white;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .user__avatar {
+        display: block;
+
+        &-image {
+            display: block;
+            height: auto;
+            width: 42px;
+            margin: 0 auto;
+        }
+    }
 }

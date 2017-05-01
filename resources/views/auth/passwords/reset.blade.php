@@ -7,12 +7,12 @@
                 <div class="form__auth-header">
                     <a href="{{ url('/') }}">
                         <img class="form__auth-logo" src="{{ config('app.logo_url') }}"/>
-                        <h1 class="hdg hdg--2 hdg--semi-bold">{{ config('app.name') }}</h1>
+                        <h1 class="hdg hdg--1 hdg--semi-bold">{{ config('app.name') }}</h1>
                     </a>
                 </div>
                 <form class="form form__auth" role="form" method="POST" action="{{ url('/password/reset') }}">
                     <div class="form__title">
-                        <h1 class="hdg hdg--2">Reset Password</h1>
+                        <h1 class="hdg hdg--2 hdg--semi-bold">Reset Password</h1>
                     </div>
                     {{ csrf_field() }}
 
