@@ -14,7 +14,6 @@
                     </h2>
                 </div>
                 <ul>
-                    <li>{{ User::userInfo( $activity->user_id )->name }}</li>
                     <li>{{$activity->miles}}</li>
                     <li>{{$activity->duration}}</li>
                 </ul>
