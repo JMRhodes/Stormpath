@@ -74,12 +74,12 @@ class ProfileController extends Controller {
     }
 
     public static function getUserAvatar( $user_id ) {
-        $file = FileEntry::where( 'user_id', $user_id )->get()->last();
+        $file   = FileEntry::where( 'user_id', $user_id )->get()->last();
         $exists = Storage::disk( 'uploads' )->exists( 'avatars/' . $file->filename );
         if ( $file->filename && $exists ) {
             return url( 'uploads/avatars/' . $file->filename );
         }
 
-        return url('/images/user.svg');
+        return url( '/images/user.svg' );
     }
 }
