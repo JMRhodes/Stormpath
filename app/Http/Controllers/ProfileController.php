@@ -75,7 +75,7 @@ class ProfileController extends Controller {
 
     public static function getUserAvatar( $user_id ) {
         $file = FileEntry::where( 'user_id', $user_id )->get()->last();
-        if ( $file->filename ) {
+        if ( isset( $file->filename ) ) {
             $exists = Storage::disk( 'uploads' )->exists( 'avatars/' . $file->filename );
             if ( $exists ) {
                 return url( 'uploads/avatars/' . $file->filename );
