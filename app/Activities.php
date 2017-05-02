@@ -20,6 +20,7 @@ class Activities extends Model {
         'miles',
         'duration',
         'description',
+        'thumbnail',
         'completed_on'
     ];
 

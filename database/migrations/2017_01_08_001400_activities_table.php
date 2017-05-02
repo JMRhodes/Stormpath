@@ -18,6 +18,7 @@ class ActivitiesTable extends Migration {
             $table->float( 'miles' );
             $table->string( 'duration' );
             $table->text( 'description' );
+            $table->string( 'thumbnail' );
             $table->date( 'completed_on' );
             $table->timestamps();
         } );

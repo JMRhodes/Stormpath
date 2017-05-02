@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\ActivitiesController;
 ?>
 
 @include('components.page-header')
@@ -12,6 +12,9 @@ use App\Http\Controllers\ProfileController;
     @if (count($activities) > 0)
         @foreach ($activities as $activity)
             <div class="panel panel--sm activity">
+                <div class="panel__image">
+                    <img src="{{ActivitiesController::getFeaturedImage($activity)}}"/>
+                </div>
                 <div class="panel__user">
                     <div class="user__avatar-image">
                         <img src="{{ProfileController::getUserAvatar($activity->user_id)}}"/>

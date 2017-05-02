@@ -25,10 +25,10 @@ $fields = [
 
 <div class="panel panel--sm profile">
     <div class="panel__header pad-xs--15 pad-sm--30 pad--no-top">
-        <h1 class="hdg hdg--2">Add Activity</h1>
+        <h1 class="hdg hdg--2">Add Run</h1>
     </div>
 
-    <form class="form" role="form" method="POST" action="{{ url('/add-activity') }}">
+    <form class="form" role="form" method="POST" action="{{ url('/add-activity') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <?php
@@ -36,6 +36,8 @@ $fields = [
             ( new FormFieldsController )->formRow( $row );
         }
         ?>
+
+        <input type="file" name="image"/>
 
         <div class="form-row pad-sm--30 pad--no-bottom">
             <button type="submit" class="btn btn--primary btn--full">
