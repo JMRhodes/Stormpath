@@ -45,4 +45,13 @@ class Conversions {
             }
         }
     }
+
+    /**
+     * @param $int
+     *
+     * @return string
+     */
+    public static function intToFloat($int) {
+        return number_format($int, 2);
+    }
 }

@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\UserProfile;
-use Illuminate\Http\Request;
+use App\FileEntry;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class ProfileController extends Controller {
     /**
@@ -38,8 +42,22 @@ class ProfileController extends Controller {
             'name'     => 'required|max:255',
             'password' => 'min:6|confirmed'
         ] );
+
         $user         = User::find( Auth::user()->id );
-        $user_profile = UserProfile::where( 'user_id', Auth::user()->id )->get()->first();
+        $user_profile = UserProfile::where( 'user_id', Auth::user()->id )->get()->last();
+
+        // save file
+        $file = $input->file( 'image' );
+        if ( $file ) {
+            $extension = $file->getClientOriginalExtension();
+            Storage::disk( 'uploads' )->put( '/avatars/' . $file->getFilename() . '.' . $extension, File::get( $file ) );
+            $entry                    = new Fileentry();
+            $entry->user_id           = Auth::user()->id;
+            $entry->mime              = $file->getClientMimeType();
+            $entry->original_filename = $file->getClientOriginalName();
+            $entry->filename          = $file->getFilename() . '.' . $extension;
+            $entry->save();
+        }
 
         $user->name           = $input["name"];
         $user_profile->name   = $input["name"];
@@ -53,5 +71,15 @@ class ProfileController extends Controller {
         $user_profile->save();
 
         return redirect( 'profile' );
+    }
+
+    public static function getUserAvatar( $user_id ) {
+        $file = FileEntry::where( 'user_id', $user_id )->get()->last();
+        $exists = Storage::disk( 'uploads' )->exists( 'avatars/' . $file->filename );
+        if ( $file->filename && $exists ) {
+            return url( 'uploads/avatars/' . $file->filename );
+        }
+
+        return url('/images/user.svg');
     }
 }

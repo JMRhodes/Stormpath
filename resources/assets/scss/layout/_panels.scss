@@ -10,6 +10,7 @@
     background: $white;
     position: relative;
     margin-bottom: 20px;
+    overflow: hidden;
     @include border-radius(5px);
     @include box-shadow(1px 1px 2px $porcelain);
 
@@ -23,16 +24,45 @@
         }
     }
 
+    &--lg {
+        padding: 30px 15px;
+        max-width: 960px;
+
+        @include tablet() {
+            padding: 45px 30px;
+        }
+    }
+
     &__user {
+        position: relative;
         line-height: 32px;
         margin-bottom: 15px;
+        padding-bottom: 20px;
         @include clearfix();
 
-        img {
+        .user__avatar-image {
             width: 36px;
-            height: auto;
+            height: 36px;
             float: left;
             margin-right: 15px;
+            overflow: hidden;
+            @include border-radius(50px);
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 1000%;
+            left: -500%;
+            bottom: 0;
+            background: $aqua-haze;
         }
     }
 
@@ -42,5 +72,18 @@
         font-weight: 600;
         font-size: 12px;
         color: $ghost;
+    }
+
+    &__miles {
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+
+        &::after {
+            content: "mi";
+            display: inline-block;
+            font-size: 28px;
+            position: relative;
+            left: -8px;
+        }
     }
 }

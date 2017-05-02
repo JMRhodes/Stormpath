@@ -21,7 +21,12 @@ Route::get( '/profile', [
     'uses'       => 'ProfileController@index'
 ] );
 
-Route::post( '/profile', [
+Route::get( 'profile/get/{filename}', [
+    'as'   => 'getentry',
+    'uses' => 'FileEntryController@get'
+] );
+
+Route::post( '/profile/update', [
     'middleware' => [ 'auth' ],
     'uses'       => 'ProfileController@update'
 ] );

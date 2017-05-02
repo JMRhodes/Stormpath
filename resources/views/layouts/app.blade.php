@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="/images/favicons/favicon.ico" type="image/x-icon"/>
@@ -31,7 +31,7 @@
     <meta name="msapplication-square310x310logo" content="/images/favicons/largetile.png"/>
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Oswald" rel="stylesheet">
     <link href="/css/app.min.css" rel="stylesheet">
 
     <!-- Scripts -->
