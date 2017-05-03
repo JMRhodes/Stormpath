@@ -70,7 +70,7 @@ class ActivitiesController extends Controller {
     public function delete( Request $request ) {
         $activity_id = filter_input( INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT );
         if ( ! $activity_id ) {
-            return redirect( '/home' );
+            return redirect( '/' );
         }
 
         $activity = Activities::where( 'id', $activity_id )->get()->last();
