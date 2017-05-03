@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 
 class ActivitiesController extends Controller {
@@ -48,6 +49,18 @@ class ActivitiesController extends Controller {
             $entry->mime              = $file->getClientMimeType();
             $entry->original_filename = $file->getClientOriginalName();
             $entry->filename          = $file->getFilename() . '.' . $extension;
+
+            // thumbnail
+            $destinationPath = public_path( 'thumbnail' );
+            $thumb           = Image::make( $file->getRealPath() );
+            $thumb->resize( 100, 100, function ( $constraint ) {
+                $constraint->aspectRatio();
+            } );;
+
+            dd( $thumb );
+            Storage::disk( 'uploads' )->put( '/thumbnails/' . $thumb . '.' . $extension, File::get( $file ) );
+//            $thumb->save( $destinationPath . '/' . $file->getFilename() . '-100x100.' . $extension );
+
             $entry->save();
         }
 

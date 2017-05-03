@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller {
+
     /**
      * Create a new controller instance.
      */
@@ -77,6 +78,11 @@ class ProfileController extends Controller {
         return redirect( 'profile' );
     }
 
+    /**
+     * @param $user_id
+     *
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public static function getUserAvatar( $user_id ) {
         $user_profile = UserProfile::where( 'user_id', $user_id )->get()->last();
         if ( ! empty( $user_profile->avatar ) ) {
