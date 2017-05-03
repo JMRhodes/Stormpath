@@ -12,27 +12,27 @@
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="/images/favicons/favicon.ico" type="image/x-icon"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
-    <meta name="msapplication-square70x70logo" content="/images/favicons/smalltile.png"/>
-    <meta name="msapplication-square150x150logo" content="/images/favicons/mediumtile.png"/>
-    <meta name="msapplication-wide310x150logo" content="/images/favicons/widetile.png"/>
-    <meta name="msapplication-square310x310logo" content="/images/favicons/largetile.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png?ver={{config('app.version', 'Laravel')}}">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png?ver={{config('app.version', 'Laravel')}}" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png?ver={{config('app.version', 'Laravel')}}" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png?ver={{config('app.version', 'Laravel')}}" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png?ver={{config('app.version', 'Laravel')}}" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="/images/favicons/smalltile.png?ver={{config('app.version', 'Laravel')}}"/>
+    <meta name="msapplication-square150x150logo" content="/images/favicons/mediumtile.png?ver={{config('app.version', 'Laravel')}}"/>
+    <meta name="msapplication-wide310x150logo" content="/images/favicons/widetile.png?ver={{config('app.version', 'Laravel')}}"/>
+    <meta name="msapplication-square310x310logo" content="/images/favicons/largetile.png?ver={{config('app.version', 'Laravel')}}"/>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Oswald" rel="stylesheet">
-    <link href="/css/app.min.css" rel="stylesheet">
+    <link href="/css/app.min.css?ver={{config('app.version', 'Laravel')}}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -54,7 +54,7 @@
 
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="/js/vendor.min.js"></script>
-<script src="/js/app.min.js"></script>
+<script src="/js/vendor.min.js?ver={{config('app.version', 'Laravel')}}"></script>
+<script src="/js/app.min.js?ver={{config('app.version', 'Laravel')}}"></script>
 </body>
 </html>

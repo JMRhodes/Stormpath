@@ -23,6 +23,7 @@ return [
     */
 
     'name'     => 'MN Run Club',
+    'version'  => '1.0',
 
     // Logo Image URL
     // 'logo_url' => '/images/logos/' . $logos[ $logo_rand ] . '.svg',
