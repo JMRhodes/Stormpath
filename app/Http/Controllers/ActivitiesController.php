@@ -21,6 +21,9 @@ class ActivitiesController extends Controller {
         $this->middleware( 'auth' );
     }
 
+    /**
+     * @return mixed
+     */
     public function index() {
         $activities = DB::table( 'activities' )->latest( 'completed_on' )->get();
 
@@ -35,6 +38,8 @@ class ActivitiesController extends Controller {
      * @return Activity
      */
     protected function create( Request $request ) {
+        ini_set( 'memory_limit', '256M' );
+
         date_default_timezone_set( 'America/Chicago' );
         $date_completed = $_POST['date_completed_submit'] ?: date( 'Y-m-d' );
         $time_completed = isset( $_POST['time_completed_submit'] ) ? $_POST['time_completed_submit'] : date( 'H:i:s', time() );
@@ -45,9 +50,9 @@ class ActivitiesController extends Controller {
         if ( $image ) {
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $path     = public_path( 'uploads/activities/' . $filename );
-            Image::make( $image->getRealPath() )->resize( 800, null, function ( $constraint ) {
+            Image::make( $image->getRealPath() )->resize( 600, null, function ( $constraint ) {
                 $constraint->aspectRatio();
-            } )->save( $path );
+            } )->orientate()->save( $path );
 
             $entry                    = new Fileentry();
             $entry->user_id           = Auth::user()->id;
@@ -59,6 +64,7 @@ class ActivitiesController extends Controller {
             $thumbnail = $filename;
         }
 
+        // build activity object for table row
         $activity = new Activities( [
             'user_id'      => Auth::user()->id,
             'type'         => 'run',

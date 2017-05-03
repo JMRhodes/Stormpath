@@ -41,6 +41,8 @@ class ProfileController extends Controller {
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update( Request $input ) {
+        ini_set( 'memory_limit', '256M' );
+
         $this->validate( $input, [
             'name'     => 'required|max:255',
             'password' => 'min:6|confirmed'
@@ -57,7 +59,7 @@ class ProfileController extends Controller {
         if ( $image ) {
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $path     = public_path( 'uploads/avatars/' . $filename );
-            Image::make( $image->getRealPath() )->fit( 300 )->save( $path );
+            Image::make( $image->getRealPath() )->fit( 300 )->orientate()->save( $path );
 
             $entry                    = new Fileentry();
             $entry->user_id           = Auth::user()->id;
