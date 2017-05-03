@@ -67,6 +67,11 @@ class ActivitiesController extends Controller {
         return redirect( '/' );
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete( Request $request ) {
         $activity_id = filter_input( INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT );
         if ( ! $activity_id ) {
@@ -81,6 +86,11 @@ class ActivitiesController extends Controller {
         return redirect( '/' );
     }
 
+    /**
+     * @param $activity
+     *
+     * @return bool|\Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public static function getFeaturedImage( $activity ) {
         if ( ! $activity->thumbnail ) {
             return false;

@@ -47,7 +47,7 @@ class ProfileController extends Controller {
         $user_profile = UserProfile::where( 'user_id', Auth::user()->id )->get()->last();
 
         // save file
-        $avatar = '';
+        $avatar = $user_profile->avatar;
         $file   = $input->file( 'image' );
         if ( $file ) {
             $extension = $file->getClientOriginalExtension();
