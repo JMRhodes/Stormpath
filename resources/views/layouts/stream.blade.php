@@ -38,7 +38,7 @@ use App\Http\Controllers\ActivitiesController;
                         </div>
                         <div class="panel__footer">
                             {{\App\Helper\Conversions::getPostElapsedTime($activity->completed_on)}}
-                            
+
                             @if (Auth::user()->id == $activity->user_id)
                                 <a class="panel__delete" href="javascript:;"
                                    onclick="event.preventDefault(); document.getElementById('delete-activity').submit();">
