@@ -5,6 +5,12 @@
                 <use xlink:href="#icon-bar-graph-2"></use>
             </svg>
             @yield('title')
+
+            @if( isset($activities) )
+                <span class="page__subtitle">
+                    {{count($activities)}} Total Activities
+                </span>
+            @endif
         </h1>
     </div>
 </div>

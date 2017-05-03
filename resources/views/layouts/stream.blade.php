@@ -8,7 +8,6 @@ use App\Http\Controllers\ActivitiesController;
 <div class="container">
     <div class="panels row">
         @include('components.add-activity')
-
         @if (count($activities) > 0)
             @foreach ($activities as $activity)
                 <div class="panel__item col-sm-3">
