@@ -35,7 +35,7 @@ class ActivitiesController extends Controller {
     protected function create( Request $request ) {
         date_default_timezone_set( 'America/Chicago' );
         $date_completed = $_POST['date_completed_submit'] ?: date( 'Y-m-d' );
-        $time_completed = $_POST['time_completed_submit'] ?: date( 'H:i:s', time() );
+        $time_completed = isset( $_POST['time_completed_submit'] ) ? $_POST['time_completed_submit'] : date( 'H:i:s', time() );
 
         // save file
         $file  = $request->file( 'image' );
@@ -63,6 +63,18 @@ class ActivitiesController extends Controller {
 
         // save initial user profile data
         $new_activity = $activity->save();
+
+        return redirect( '/home' );
+    }
+
+    public function delete( Request $request ) {
+        $activity_id = filter_input( INPUT_POST, 'activity', FILTER_VALIDATE_INT );
+
+        if ( ! $activity_id ) {
+            return redirect( '/home' );
+        }
+
+        Activities::where( 'id', $activity_id )->delete();
 
         return redirect( '/home' );
     }

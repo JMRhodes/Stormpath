@@ -1,3 +1,7 @@
+<?php
+use App\Http\Controllers\ProfileController;
+?>
+
 <div class="header">
     <div class="header__primary">
         <a href="{{ url('/') }}">
@@ -17,7 +21,7 @@
 
     <nav class="header__nav">
         <a class="nav__user user__avatar" href="{{ url('/profile') }}">
-            <img class="user__avatar-image" src="/images/user.svg"/>
+            <img class="user__avatar-image" src="{{ProfileController::getUserAvatar(Auth::user()->id)}}"/>
         </a>
 
         <a class="nav__logout" href="{{ url('/logout') }}"

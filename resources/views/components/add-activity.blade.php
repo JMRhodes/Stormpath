@@ -5,44 +5,52 @@ $fields = [
     [
         'fields' => [
             'miles' => [
-                'label'           => 'Miles',
+                'label'           => 'Miles (0.00)',
+                'container_class' => 'float'
             ],
             'duration' => [
-                'label'           => 'Duration',
+                'label'           => 'Duration (hh:mm:ss)',
+                'container_class' => 'float'
             ],
             'date_completed' => [
                 'label'           => 'Date',
-                'container_class' => 'datepicker'
-            ],
-            'time_completed' => [
-                'label'           => 'Time',
-                'container_class' => 'timepicker'
-            ],
+                'container_class' => 'float datepicker'
+            ]
         ]
     ],
 ];
 ?>
 
-<div class="panel panel--sm profile">
-    <div class="panel__header pad-xs--15 pad-sm--30 pad--no-top">
-        <h1 class="hdg hdg--2">Add Run</h1>
-    </div>
-
-    <form class="form" role="form" method="POST" action="{{ url('/add-activity') }}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-
-        <?php
-        foreach ( $fields as $row ) {
-            ( new FormFieldsController )->formRow( $row );
-        }
-        ?>
-
-        <input type="file" name="image"/>
-
-        <div class="form-row pad-sm--30 pad--no-bottom">
-            <button type="submit" class="btn btn--primary btn--full">
-                Post a Run
-            </button>
+<div class="panel__item col-sm-3 add-activity">
+    <div class="panel">
+        <div class="panel__header">
+            <div class="panel__header-icon">
+                <svg class="icon icon-circle-plus"><use xlink:href="#icon-circle-plus"></use></svg>
+            </div>
+            <h2 class="hdg hdg--3 hdg--semi-bold hdg--black">
+                Add a Run
+            </h2>
         </div>
-    </form>
+        <div class="panel__content panel__content--no-padding-bottom">
+            <form class="form" role="form" method="POST" action="{{ url('/add-activity') }}" enctype="multipart/form-data">
+                {{ csrf_field() }}
+
+                <?php
+                foreach ( $fields as $row ) {
+                    ( new FormFieldsController )->formRow( $row );
+                }
+                ?>
+
+                <div class="float">
+                    <input type="file" name="image"/>
+                </div>
+
+                <div class="form-row pad-sm--30 pad--no-bottom">
+                    <button type="submit" class="btn btn--primary btn--full">
+                        Post a Run
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

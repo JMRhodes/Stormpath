@@ -35,3 +35,8 @@ Route::post( '/add-activity', [
     'middleware' => [ 'auth' ],
     'uses'       => 'ActivitiesController@create'
 ] );
+
+Route::post( '/delete-activity', [
+    'middleware' => [ 'auth' ],
+    'uses'       => 'ActivitiesController@delete'
+] );

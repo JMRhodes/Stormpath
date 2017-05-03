@@ -13,10 +13,14 @@ var masonryPanels = (function ($) {
 
     pub._masonryInit = function () {
         panelItems.masonry({
-            itemSelector: '.panel--sm',
-            columnWidth: 320,
-            fitWidth: true,
-            gutter: 30
+            itemSelector: '.panel__item',
+            columnWidth: '.panel__item',
+            percentPosition: true,
+        });
+
+        // layout Masonry after each image loads
+        panelItems.imagesLoaded().progress(function () {
+            panelItems.masonry('layout');
         });
     };
 

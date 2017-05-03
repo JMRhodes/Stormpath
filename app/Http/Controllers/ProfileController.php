@@ -47,7 +47,8 @@ class ProfileController extends Controller {
         $user_profile = UserProfile::where( 'user_id', Auth::user()->id )->get()->last();
 
         // save file
-        $file = $input->file( 'image' );
+        $avatar = '';
+        $file   = $input->file( 'image' );
         if ( $file ) {
             $extension = $file->getClientOriginalExtension();
             Storage::disk( 'uploads' )->put( '/avatars/' . $file->getFilename() . '.' . $extension, File::get( $file ) );
@@ -57,6 +58,8 @@ class ProfileController extends Controller {
             $entry->original_filename = $file->getClientOriginalName();
             $entry->filename          = $file->getFilename() . '.' . $extension;
             $entry->save();
+
+            $avatar = $entry->filename;
         }
 
         $user->name           = $input["name"];
@@ -64,6 +67,7 @@ class ProfileController extends Controller {
         $user_profile->age    = $input["age"];
         $user_profile->weight = $input["weight"];
         $user_profile->height = $input["height"];
+        $user_profile->avatar = $avatar;
         if ( $input->has( 'password' ) ) {
             $user->password = bcrypt( $input['password'] );
         }
@@ -74,7 +78,12 @@ class ProfileController extends Controller {
     }
 
     public static function getUserAvatar( $user_id ) {
-        $file = FileEntry::where( 'user_id', $user_id )->get()->last();
+        $user_profile = UserProfile::where( 'user_id', $user_id )->get()->last();
+        if ( empty( $user_profile->avatar ) ) {
+            return false;
+        }
+
+        $file = FileEntry::where( 'filename', $user_profile->avatar )->get()->last();
         if ( isset( $file->filename ) ) {
             $exists = Storage::disk( 'uploads' )->exists( 'avatars/' . $file->filename );
             if ( $exists ) {

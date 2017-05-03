@@ -58,14 +58,14 @@
     &__brand {
         width: 30%;
         text-align: center;
-        padding: 15px 0;
+        padding: 12px 0;
         display: inline-block;
 
         img {
             margin: 0 auto;
             display: block;
-            max-width: 42px;
-            height: auto;
+            width: 48px;
+            height: 48px;
 
             @include tablet() {
                 display: block;
@@ -93,8 +93,9 @@
         img {
             margin: 0 auto;
             display: block;
-            max-width: 42px;
-            height: auto;
+            width: 42px;
+            height: 42px;
+            @include border-radius(100px);
         }
     }
     &__logout {
