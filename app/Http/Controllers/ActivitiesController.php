@@ -68,13 +68,15 @@ class ActivitiesController extends Controller {
     }
 
     public function delete( Request $request ) {
-        $activity_id = filter_input( INPUT_POST, 'activity', FILTER_VALIDATE_INT );
-
+        $activity_id = filter_input( INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT );
         if ( ! $activity_id ) {
             return redirect( '/home' );
         }
 
-        Activities::where( 'id', $activity_id )->delete();
+        $activity = Activities::where( 'id', $activity_id )->get()->last();
+        if ( Auth::user()->id === $activity->user_id ) {
+            $activity->delete();
+        }
 
         return redirect( '/home' );
     }

@@ -40,18 +40,11 @@ use App\Http\Controllers\ActivitiesController;
                             {{\App\Helper\Conversions::getPostElapsedTime($activity->completed_on)}}
 
                             @if (Auth::user()->id == $activity->user_id)
-                                <a class="panel__delete" href="javascript:;"
-                                   onclick="event.preventDefault(); document.getElementById('delete-activity').submit();">
+                                <a class="panel__delete" href="{{ url('/delete-activity?id='.$activity->id) }}">
                                     <svg class="icon icon-trash">
                                         <use xlink:href="#icon-trash"></use>
                                     </svg>
                                 </a>
-
-                                <form id="delete-activity" action="{{ url('/delete-activity') }}" method="POST"
-                                      style="display: none;">
-                                    <input type="hidden" name="activity" value="{{$activity->id}}">
-                                    {{ csrf_field() }}
-                                </form>
                             @endif
                         </div>
                     </div>
