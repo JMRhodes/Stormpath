@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 
 class ActivitiesController extends Controller {
@@ -38,30 +39,24 @@ class ActivitiesController extends Controller {
         $date_completed = $_POST['date_completed_submit'] ?: date( 'Y-m-d' );
         $time_completed = isset( $_POST['time_completed_submit'] ) ? $_POST['time_completed_submit'] : date( 'H:i:s', time() );
 
-        // save file
-        $file  = $request->file( 'image' );
-        $entry = (object) [];
-        if ( $file ) {
-            $extension = $file->getClientOriginalExtension();
-            Storage::disk( 'uploads' )->put( '/activities/' . $file->getFilename() . '.' . $extension, File::get( $file ) );
+        // handle image uploading
+        $thumbnail = '';
+        $image     = Input::file( 'image' );
+        if ( $image ) {
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $path     = public_path( 'uploads/activities/' . $filename );
+            Image::make( $image->getRealPath() )->resize( 800, null, function ( $constraint ) {
+                $constraint->aspectRatio();
+            } )->save( $path );
+
             $entry                    = new Fileentry();
             $entry->user_id           = Auth::user()->id;
-            $entry->mime              = $file->getClientMimeType();
-            $entry->original_filename = $file->getClientOriginalName();
-            $entry->filename          = $file->getFilename() . '.' . $extension;
-
-            // thumbnail
-            $destinationPath = public_path( 'thumbnail' );
-            $thumb           = Image::make( $file->getRealPath() );
-            $thumb->resize( 100, 100, function ( $constraint ) {
-                $constraint->aspectRatio();
-            } );;
-
-            dd( $thumb );
-            Storage::disk( 'uploads' )->put( '/thumbnails/' . $thumb . '.' . $extension, File::get( $file ) );
-//            $thumb->save( $destinationPath . '/' . $file->getFilename() . '-100x100.' . $extension );
-
+            $entry->mime              = $image->getClientMimeType();
+            $entry->original_filename = $image->getClientOriginalName();
+            $entry->filename          = $filename;
             $entry->save();
+
+            $thumbnail = $filename;
         }
 
         $activity = new Activities( [
@@ -70,12 +65,12 @@ class ActivitiesController extends Controller {
             'miles'        => isset( $_POST['miles'] ) ? $_POST['miles'] : 0,
             'duration'     => $_POST['duration'],
             'description'  => '',
-            'thumbnail'    => isset( $entry->filename ) ? $entry->filename : '',
+            'thumbnail'    => $thumbnail,
             'completed_on' => $date_completed . ' ' . $time_completed
         ] );
 
         // save initial user profile data
-        $new_activity = $activity->save();
+        $activity->save();
 
         return redirect( '/' );
     }

@@ -9,6 +9,8 @@ use App\FileEntry;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller {
@@ -49,18 +51,22 @@ class ProfileController extends Controller {
 
         // save file
         $avatar = $user_profile->avatar;
-        $file   = $input->file( 'image' );
-        if ( $file ) {
-            $extension = $file->getClientOriginalExtension();
-            Storage::disk( 'uploads' )->put( '/avatars/' . $file->getFilename() . '.' . $extension, File::get( $file ) );
+
+        // handle image uploading
+        $image = Input::file( 'image' );
+        if ( $image ) {
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $path     = public_path( 'uploads/avatars/' . $filename );
+            Image::make( $image->getRealPath() )->fit( 300 )->save( $path );
+
             $entry                    = new Fileentry();
             $entry->user_id           = Auth::user()->id;
-            $entry->mime              = $file->getClientMimeType();
-            $entry->original_filename = $file->getClientOriginalName();
-            $entry->filename          = $file->getFilename() . '.' . $extension;
+            $entry->mime              = $image->getClientMimeType();
+            $entry->original_filename = $image->getClientOriginalName();
+            $entry->filename          = $filename;
             $entry->save();
 
-            $avatar = $entry->filename;
+            $avatar = $filename;
         }
 
         $user->name           = $input["name"];
