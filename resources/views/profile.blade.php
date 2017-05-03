@@ -44,9 +44,9 @@ $fields = [
 @section('title', 'Edit Profile')
 
 @section('content')
+    @include('components.page-header')
 
-    <div class="container-fluid container--content">
-        @include('components.page-header')
+    <div class="container">
         <div class="panel panel--lg profile">
             <form class="form" role="form" method="POST" action="{{ url('/profile/update') }}" enctype="multipart/form-data">
                 <div class="panel__sidebar col-sm-2">
