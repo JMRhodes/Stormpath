@@ -46,6 +46,11 @@ class Conversions {
         }
     }
 
+    public static function getPostedDate( $date ) {
+        $unix = strtotime($date);
+        return date('F j, Y', $unix);
+    }
+
     /**
      * @param $int
      *
