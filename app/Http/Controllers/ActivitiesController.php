@@ -64,7 +64,7 @@ class ActivitiesController extends Controller {
         // save initial user profile data
         $new_activity = $activity->save();
 
-        return redirect( '/home' );
+        return redirect( '/' );
     }
 
     public function delete( Request $request ) {
@@ -74,11 +74,11 @@ class ActivitiesController extends Controller {
         }
 
         $activity = Activities::where( 'id', $activity_id )->get()->last();
-        if ( Auth::user()->id === $activity->user_id ) {
+        if ( Auth::user()->id == $activity->user_id ) {
             $activity->delete();
         }
 
-        return redirect( '/home' );
+        return redirect( '/' );
     }
 
     public static function getFeaturedImage( $activity ) {
