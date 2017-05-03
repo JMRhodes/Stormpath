@@ -79,15 +79,13 @@ class ProfileController extends Controller {
 
     public static function getUserAvatar( $user_id ) {
         $user_profile = UserProfile::where( 'user_id', $user_id )->get()->last();
-        if ( empty( $user_profile->avatar ) ) {
-            return false;
-        }
-
-        $file = FileEntry::where( 'filename', $user_profile->avatar )->get()->last();
-        if ( isset( $file->filename ) ) {
-            $exists = Storage::disk( 'uploads' )->exists( 'avatars/' . $file->filename );
-            if ( $exists ) {
-                return url( 'uploads/avatars/' . $file->filename );
+        if ( ! empty( $user_profile->avatar ) ) {
+            $file = FileEntry::where( 'filename', $user_profile->avatar )->get()->last();
+            if ( isset( $file->filename ) ) {
+                $exists = Storage::disk( 'uploads' )->exists( 'avatars/' . $file->filename );
+                if ( $exists ) {
+                    return url( 'uploads/avatars/' . $file->filename );
+                }
             }
         }
 
