@@ -25,7 +25,7 @@ class ActivitiesController extends Controller {
      * @return mixed
      */
     public function index() {
-        $activities = DB::table( 'activities' )->latest( 'completed_on' )->get();
+        $activities = DB::table( 'activities' )->latest( 'completed_on' )->orderBy('id', 'desc')->get();
 
         return $activities;
     }
