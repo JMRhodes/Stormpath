@@ -3,6 +3,7 @@
 /public/uploads
 /storage/*.key
 /vendor
+/bower_components
 /.idea
 Homestead.json
 Homestead.yaml
