@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Recent Activity')
+@section('title', 'Dashboard')
 
 @section('content')
-    @include('components.page-header')
+    {{--@include('components.page-header')--}}
 
     @include('layouts.stream')
 @endsection

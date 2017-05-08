@@ -30,8 +30,9 @@
     <meta name="msapplication-wide310x150logo" content="/images/favicons/widetile.png?ver={{config('app.version', 'Laravel')}}"/>
     <meta name="msapplication-square310x310logo" content="/images/favicons/largetile.png?ver={{config('app.version', 'Laravel')}}"/>
 
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Oswald" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link href="/css/app.min.css?ver={{config('app.version', 'Laravel')}}" rel="stylesheet">
 
     <!-- Scripts -->
@@ -53,7 +54,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/js/vendor.min.js?ver={{config('app.version', 'Laravel')}}"></script>
 <script src="/js/app.min.js?ver={{config('app.version', 'Laravel')}}"></script>
 </body>

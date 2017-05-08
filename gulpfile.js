@@ -14,11 +14,12 @@ var PATHS = {
         'resources/assets/scss/**/*.scss'
     ],
     jsVendor: [
+        'bower_components/materialize/dist/js/materialize.js',
         'bower_components/pickadate/lib/picker.js',
         'bower_components/pickadate/lib/picker.date.js',
         'bower_components/pickadate/lib/picker.time.js',
         'bower_components/masonry/dist/masonry.pkgd.js',
-        'bower_components/imagesloaded/imagesloaded.pkgd.min.js'
+        'bower_components/imagesloaded/imagesloaded.pkgd.min.js',
     ],
     jsApp: [
         'resources/assets/js/app/*.js',

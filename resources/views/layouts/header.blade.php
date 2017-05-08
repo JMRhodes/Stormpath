@@ -1,37 +1,47 @@
 <?php
 use App\Http\Controllers\ProfileController;
+
 ?>
 
-<div class="header">
-    <div class="header__primary">
-        <a href="{{ url('/') }}">
-            <svg class="icon icon-grid">
-                <use xlink:href="#icon-grid"></use>
-            </svg>
-            <span>Dashboard</span>
-        </a>
-    </div>
-
-    <!-- Branding Image -->
-    <div class="header__brand">
-        <a href="{{ url('/') }}">
+<nav>
+    <div class="nav-wrapper">
+        <a href="{{ url('/') }}" class="brand-logo left">
             <img class="header__logo" src="{{ config('app.logo_url') }}"/>
+            @yield('title')
         </a>
+
+        <ul class="right">
+            <li>
+                <a class="nav__user user__avatar" href="{{ url('/profile') }}">
+                    <img class="circle responsive-img user__avatar-image"
+                         src="{{ProfileController::getUserAvatar(Auth::user()->id)}}"/>
+                </a>
+            </li>
+            <li>
+                <a class='dropdown-button' href='#' data-activates='dropdown1' data-constrainWidth="false"
+                   data-beloworigin="true">
+                    <i class="material-icons">more_vert</i>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li>
+                <a href="{{ url('/profile') }}">Edit Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="{{ url('/logout') }}"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+                      style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+        </ul>
     </div>
-
-    <nav class="header__nav">
-        <a class="nav__user user__avatar" href="{{ url('/profile') }}">
-            <img class="user__avatar-image" src="{{ProfileController::getUserAvatar(Auth::user()->id)}}"/>
-        </a>
-
-        <a class="nav__logout" href="{{ url('/logout') }}"
-           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <svg class="icon icon-power"><use xlink:href="#icon-power"></use></svg>
-        </a>
-
-        <form id="logout-form" action="{{ url('/logout') }}" method="POST"
-              style="display: none;">
-            {{ csrf_field() }}
-        </form>
-    </nav>
-</div>
+</nav>
